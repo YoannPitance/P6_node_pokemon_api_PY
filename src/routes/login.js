@@ -19,7 +19,7 @@ module.exports = (app) => {
               return res.status(401).json({ message });
             }
             // JWT
-            consttoken = jwt.sign({ userId: user.id }, privateKey, {
+            const token = jwt.sign({ userId: user.id }, privateKey, {
               expiresIn: "24h",
             });
 
@@ -29,7 +29,7 @@ module.exports = (app) => {
       })
       .catch((error) => {
         const message = `L'utilisateur n'a  pas été connecté. Réessayez dans quelques instants.`;
-        return res.json({ message, data: error });
+        return res.status(500).json({ message, data: error });
       });
   });
 };

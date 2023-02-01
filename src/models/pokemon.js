@@ -19,6 +19,7 @@ module.exports = (sequelize, DataTypes) => {
         primaryKey: true,
         autoIncrement: true,
       },
+
       name: {
         type: DataTypes.STRING,
         allowNull: false,
@@ -68,6 +69,7 @@ module.exports = (sequelize, DataTypes) => {
           notNull: { msg: `les points de dégats sont une propriété requise` },
         },
       },
+
       picture: {
         type: DataTypes.STRING,
         allowNull: false,
@@ -78,6 +80,7 @@ module.exports = (sequelize, DataTypes) => {
           },
         },
       },
+
       types: {
         type: DataTypes.STRING,
         allowNull: false,
